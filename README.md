@@ -1,0 +1,2 @@
+# bash
+.bashrc and more
