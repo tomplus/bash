@@ -1,0 +1,100 @@
+" TPrus, vimrc
+
+set nocompatible
+set textwidth=130
+set tabstop=4
+set expandtab
+
+" ---------------
+
+map <f1> :previous<cr>
+map <f2> :next<cr>
+command! Q  quit
+command! W  write
+command! Wq wq
+
+" --------------   
+
+syntax on
+filetype indent on
+filetype on
+filetype plugin on
+set incsearch
+
+set autoindent
+
+set smartcase
+set scrolloff=5
+
+set autowrite
+set nobackup
+set nowritebackup
+set backspace=2
+set background=dark
+set nocompatible
+set comments=b:#,:%,fb:-,n:>,n:)
+set wrap
+set noerrorbells
+set formatoptions=cqrt
+set helpheight=0
+set hidden
+set highlight=8r,db,es,hs,mb,Mr,nu,rs,sr,tb,vr,ws
+set noicon
+set ignorecase
+set noinsertmode
+set iskeyword=@,48-57,_,192-255,-,.,@-@
+set joinspaces
+set laststatus=2
+set lazyredraw
+set magic
+set nomodeline
+set nonumber
+set report=0
+set ruler
+set shiftwidth=8
+set shortmess=a
+set showcmd
+set showmatch
+set showmode
+set suffixes=.aux,.bak,.dvi,.gz,.idx,.log,.ps,.swp,.tar
+set nostartofline
+set notextmode
+set nottyfast
+set nottybuiltin
+set ttyscroll=0
+set visualbell
+set t_vb=
+set whichwrap=<,>
+set wildchar=<TAB>
+set wrapmargin=1
+set hlsearch
+set shell=bash
+set title
+set pastetoggle=<F2>
+
+set history=1000
+set undolevels=1000
+
+" -------------
+
+iab Ydate <C-R>=strftime("%Y.%m.%d")<CR>
+
+" -------------
+
+" autocomplete
+function InsertTabWrapper()
+      let col = col('.') - 1
+      if !col || getline('.')[col - 1] !~ '\k'
+          return "\<tab>"
+      else
+          return "\<c-p>"
+      endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+" jump to the last position
+au BufReadPost * if line("'\"") > 0|if line("'\"") <=line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+
