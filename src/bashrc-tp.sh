@@ -26,11 +26,8 @@ if [ "$PS1" ]; then
 
     # Kubernetes
     if type kubectl >/dev/null 2>&1; then
-
         source <(kubectl completion bash)
         alias k="kubectl"
-        alias ka='kubectl --all-namespaces'
-
     fi
 
 fi
