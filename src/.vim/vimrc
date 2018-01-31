@@ -70,7 +70,7 @@ set wrapmargin=1
 set hlsearch
 set shell=bash
 set title
-set pastetoggle=<F2>
+set pastetoggle=<F3>
 
 set history=1000
 set undolevels=1000
