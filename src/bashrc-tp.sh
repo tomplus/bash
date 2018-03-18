@@ -1,8 +1,17 @@
+# Instalation:
+#
+# Remove lines with HIST.* from ~/.bashrc
+# Add line `~/.bashrc-tp.sh` to ~/.bashrc
+#
+
 if [ "$PS1" ]; then
 
     # Neverending history
     export HISTFILESIZE=9999999999
     export HISTSIZE=9999999999
+
+    # don't put duplicate lines or lines starting with space in the history.
+    HISTCONTROL=ignoreboth
 
     # Ignore simple commands
     export HISTIGNORE="ls:ls -alh:ll:ll -h:history:top:ps:ps axf:h:hh:hhh:hs"
