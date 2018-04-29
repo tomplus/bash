@@ -92,7 +92,7 @@ function InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"1000,:20,%,n~/.viminfo
 
 " jump to the last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <=line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
