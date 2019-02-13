@@ -36,7 +36,9 @@ if [ "$PS1" ]; then
     # Kubernetes
     if type kubectl >/dev/null 2>&1; then
         source <(kubectl completion bash)
+
         alias k="kubectl"
+        source <(k completion bash | sed s/kubectl/k/g)
     fi
 
 fi
