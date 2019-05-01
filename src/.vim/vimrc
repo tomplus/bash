@@ -7,8 +7,8 @@ set expandtab
 
 " ---------------
 
-map <f1> :previous<cr>
-map <f2> :next<cr>
+map <f2> :previous<cr>
+map <f3> :next<cr>
 command! Q  quit
 command! W  write
 command! Wq wq
@@ -70,7 +70,7 @@ set wrapmargin=1
 set hlsearch
 set shell=bash
 set title
-set pastetoggle=<F3>
+set pastetoggle=<F4>
 
 set history=1000
 set undolevels=1000
@@ -97,4 +97,15 @@ set viminfo='10,\"1000,:20,%,n~/.viminfo
 " jump to the last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <=line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" file browser (F10)
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+map <f10> :Vexplore<cr>
+
+" vim-go
+let g:go_version_warning = 0
+let g:go_auto_type_info = 1
 
