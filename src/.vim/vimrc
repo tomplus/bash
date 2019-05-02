@@ -55,7 +55,7 @@ set shiftwidth=8
 set shortmess=a
 set showcmd
 set showmatch
-set showmode
+set noshowmode
 set suffixes=.aux,.bak,.dvi,.gz,.idx,.log,.ps,.swp,.tar
 set nostartofline
 set notextmode
