@@ -32,13 +32,18 @@ if [ "$PS1" ]; then
     # hs - top ssh/scp
     alias hs="egrep \"^(ssh|scp)\" ~/.bash_history | sort | uniq -c | sort -nr | head -n 20 | awk '{ gsub(/^ *[0-9]+ +/, \"\"); print;}'"
 
-
     # Kubernetes
     if type kubectl >/dev/null 2>&1; then
         source <(kubectl completion bash)
 
         alias k="kubectl"
         source <(k completion bash | sed s/kubectl/k/g)
+    fi
+
+    # gcloud
+    if test -f ~/google-cloud-sdk/path.bash.inc 2>&1; then
+        source ~/google-cloud-sdk/path.bash.inc
+        source ~/google-cloud-sdk/completion.bash.inc
     fi
 
 fi
