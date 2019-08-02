@@ -41,9 +41,15 @@ if [ "$PS1" ]; then
     fi
 
     # gcloud
-    if test -f ~/google-cloud-sdk/path.bash.inc 2>&1; then
+    if test -f ~/google-cloud-sdk/path.bash.inc; then
         source ~/google-cloud-sdk/path.bash.inc
         source ~/google-cloud-sdk/completion.bash.inc
     fi
 
+    # git prompt (https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh)
+    if test -f ~/.git-prompt.sh; then
+        source ~/.git-prompt.sh
+        export GIT_PS1_SHOWCOLORHINTS=true
+        PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+    fi
 fi
