@@ -70,6 +70,7 @@ set wrapmargin=1
 set hlsearch
 set shell=bash
 set title
+set titleold=
 set pastetoggle=<F4>
 
 set history=1000
