@@ -7,3 +7,6 @@
 [submodule "src/.vim/pack/dist/start/vim-go"]
 	path = src/.vim/pack/dist/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "src/.vim/pack/dist/start/syntastic"]
+	path = src/.vim/pack/dist/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
