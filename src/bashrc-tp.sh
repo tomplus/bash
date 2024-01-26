@@ -52,4 +52,7 @@ if [ "$PS1" ]; then
         export GIT_PS1_SHOWCOLORHINTS=true
         PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
     fi
+
+    # set terminal title
+    termtitle() { printf "\033]0;$*\007"; }
 fi
