@@ -55,4 +55,11 @@ if [ "$PS1" ]; then
 
     # set terminal title
     termtitle() { printf "\033]0;$*\007"; }
+
+    # set short version of prompt
+    shortprompt(){
+        unset PROMPT_COMMAND
+        PS1='\[\033[01;36m\]\$\[\033[00m\] '
+    }
+
 fi
